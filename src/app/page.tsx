@@ -41,7 +41,7 @@ export default function Home() {
           <p className='text-md md:text-xl px-2 pb-4 md:pr-3'>
             You can check out the source code on my
             <Link
-              href='https://github.com/matiagimenez'
+              href='https://github.com/justmatias'
               target='_blank'
               className='font-semibold ml-1 hover:underline bg-background'
             >
@@ -60,7 +60,7 @@ export default function Home() {
               LinkedIn
             </Link>
             <Link
-              href='https://github.com/matiagimenez'
+              href='https://github.com/justmatias'
               target='_blank'
               className={`inline-flex items-center justify-center gap-2 w-32 ${buttonVariants(
                 { variant: 'outline' }
