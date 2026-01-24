@@ -16,9 +16,9 @@ export default function Home() {
         <Image
           priority={true}
           src={avatar}
-          width={300}
-          height={400}
-          className='rounded-md p-4 w-auto h-auto z-30'
+          width={150}
+          height={200}
+          className='rounded-md p-4 w-auto h-auto z-30 mb-4 drop-shadow-md'
           alt='Avatar'
         />
         <section className='grow max-w-lg z-30 bg-background'>
