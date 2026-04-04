@@ -39,7 +39,7 @@ export const Footer = () => {
           I am currently doing a{' '}
           <span className='font-semibold text-sky-500'>
             bachelor&apos;s degree in information systems
-          </span> {' '}
+          </span>{' '}
           in Argentina while working in the IT field.
         </p>
         <p className='py-1 bg-background'>
