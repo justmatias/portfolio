@@ -26,13 +26,13 @@ export default function Home() {
             Hi, I&apos;m <span className='text-pink-500'>Matias</span>
           </h2>
           <h3 className='text-2xl font-semibold px-2 py-1 md:pr-3 text-pink-500'>
-            University Programmer Analyst
+            Programmer Analyst
           </h3>
           <h4 className='text-xl px-2 py-1 md:pr-3'>
             <span className='text-pink-500 font-semibold'>
-              Fullstack developer
+              Backend developer
             </span>{' '}
-            skilled in Python and React
+            skilled in Python and Node.js
           </h4>
           <p className='text-lg md:text-xl pt-6 pb-2 px-2 md:pr-3'>
             This is my personal site made using Next.js, Typescript, and

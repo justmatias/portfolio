@@ -17,4 +17,5 @@ export type TechKey =
   | 'rabbit'
   | 'pydantic'
   | 'mongodb'
+  | 'azure-functions'
   | 'datadog';
