@@ -49,7 +49,7 @@ export const WorkExperienceList = async () => {
                   <CardContent>
                     <p>{description}</p>
                   </CardContent>
-                  <CardFooter className='pb-6'>
+                  <CardFooter className='pb-6 flex-wrap gap-1'>
                     {labels.map((text) => (
                       <Badge
                         className='mr-1 font-medium bg-pink-500 text-white hover:bg-pink-500'

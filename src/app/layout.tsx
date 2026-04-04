@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className='h-full'>
+    <html lang='en' className='h-full' suppressHydrationWarning>
       <body className={`min-h-full ${openSans.className} px-4 lg:px-12`}>
         <ThemeProvider
           attribute='class'

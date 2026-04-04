@@ -10,6 +10,7 @@ const schema = new Schema({
   since: { type: String },
   to: { type: String },
   labels: { type: [String] },
+  order: { type: Number },
 });
 
 export const Experience =

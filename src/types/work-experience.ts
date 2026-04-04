@@ -6,4 +6,5 @@ export type WorkExperience = {
   url: string;
   to: string;
   labels: string[];
+  order?: number;
 };

@@ -58,3 +58,15 @@ jobs:
 
             echo "Dependencies OK"
 
+  build-check:
+    name: Build check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out files from GitHub
+        uses: actions/checkout@v4.1.7
+      - name: Setup Node.js
+        uses: actions/setup-node@v4.0.3
+      - name: Install dependencies
+        run: npm install --immutable
+      - name: Build project
+        run: npm run build

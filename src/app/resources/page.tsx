@@ -36,23 +36,51 @@ export default async function Page() {
           ideas, I hope you find these resources as enriching as I have.
         </p>
       </section>
-      <ul className='flex justify-center md:justify-normal gap-4 w-full flex-wrap flex-col my-6 bg-background z-30'>
-        {resources.map(({ title, description, url }) => {
-          return (
-            <li key={title}>
-              <h3 className='font-semibold flex text-lg items-center gap-2 hover:text-pink-500'>
-                <LinkPreview
-                  url={url}
-                  className='font-bold bg-clip-text underline'
-                >
-                  {title}
-                </LinkPreview>{' '}
-                <ExternalLinkIcon className='text-muted-foreground' />
-              </h3>
-              <p className='text-sm text-muted-foreground'>{description}</p>
-            </li>
-          );
-        })}
+
+      <h3 className='text-xl md:text-2xl font-bold mt-8 mb-4'>
+        Videos & Articles
+      </h3>
+      <ul className='flex justify-center md:justify-normal gap-4 w-full flex-wrap flex-col mb-6 bg-background z-30'>
+        {resources
+          .filter((r) => r.category === 'content' || !r.category)
+          .map(({ title, description, url }) => {
+            return (
+              <li key={title}>
+                <h3 className='font-semibold flex text-lg items-center gap-2 hover:text-pink-500'>
+                  <LinkPreview
+                    url={url}
+                    className='font-bold bg-clip-text underline'
+                  >
+                    {title}
+                  </LinkPreview>{' '}
+                  <ExternalLinkIcon className='text-muted-foreground' />
+                </h3>
+                <p className='text-sm text-muted-foreground'>{description}</p>
+              </li>
+            );
+          })}
+      </ul>
+
+      <h3 className='text-xl md:text-2xl font-bold mt-8 mb-4'>People</h3>
+      <ul className='flex justify-center md:justify-normal gap-4 w-full flex-wrap flex-col mb-6 bg-background z-30'>
+        {resources
+          .filter((r) => r.category === 'person')
+          .map(({ title, description, url }) => {
+            return (
+              <li key={title}>
+                <h3 className='font-semibold flex text-lg items-center gap-2 hover:text-pink-500'>
+                  <LinkPreview
+                    url={url}
+                    className='font-bold bg-clip-text underline'
+                  >
+                    {title}
+                  </LinkPreview>{' '}
+                  <ExternalLinkIcon className='text-muted-foreground' />
+                </h3>
+                <p className='text-sm text-muted-foreground'>{description}</p>
+              </li>
+            );
+          })}
       </ul>
     </>
   );

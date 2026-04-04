@@ -8,6 +8,7 @@ const schema = new Schema({
   demo: { type: String },
   repository: { type: String },
   stack: { type: [String] },
+  active: { type: Boolean, default: true },
 });
 
 export const Project =

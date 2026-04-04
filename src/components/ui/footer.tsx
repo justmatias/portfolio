@@ -29,7 +29,8 @@ const quotes = [
     author: 'Guido Van Rossum',
   },
   {
-    quote: 'Static typing is to reliable programming what a spelling checker is to a good writer.',
+    quote:
+      'Static typing is to reliable programming what a spelling checker is to a good writer.',
     author: 'Peter Van Roy',
   },
 ];
@@ -88,7 +89,7 @@ export const Footer = () => {
         <CarouselNext className='-right-10 md:-right-12' />
       </Carousel>
       <section className='border-t min-h-16 mt-8 flex gap-4 items-center justify-center'>
-        <Link href='https://github.com/matiagimenez' target='_blank'>
+        <Link href='https://github.com/justmatias' target='_blank'>
           <GitHubLogoIcon className='w-6 h-6' />
         </Link>
         <Link href='https://www.linkedin.com/in/matiagimenez/' target='_blank'>

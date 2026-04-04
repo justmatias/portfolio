@@ -5,7 +5,7 @@ import { Experience } from '@/models/experience';
 export async function GET(): Promise<NextResponse> {
   try {
     await database.connect();
-    const experience = await Experience.find({});
+    const experience = await Experience.find({}).sort({ order: -1 });
     return NextResponse.json(experience, { status: 200 });
   } catch (error) {
     console.error('Failed to fetch experience data:', error);

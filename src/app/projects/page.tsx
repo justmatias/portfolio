@@ -37,37 +37,38 @@ export default async function Page() {
         </p>
       </section>
       <section className='flex justify-center md:justify-normal gap-4 w-full flex-wrap my-4'>
-        {projects.map(({ name, description, demo, repository, stack }) => {
-          return (
-            <GlowingStarsBackgroundCard
-              className='w-4/5 min-w-72 min-h-fit sm:w-1/3 sm:min-w-96 pb-0'
-              key={name}
-            >
-              <h3 className='font-bold text-lg text-pink-500 py-1'>{name}</h3>
-              <h4>{description}</h4>
-              <section className='flex flex-row flex-shrink-0 items-center gap-2 mt-2'>
-                {stack.map((tech: TechKey) => {
-                  const Logo = Logos[tech];
-                  return (
-                    <LogoContainer className='h-10 w-10 circle-1' key={tech}>
-                      <Logo className='h-7 w-7 ' />
-                    </LogoContainer>
-                  );
-                })}
-              </section>
-              <p className='flex flex-wrap gap-2 mt-4 w-full'>
-                <Link
-                  href={repository}
-                  target='_blank'
-                  className={`inline-flex items-center gap-2 bg-background w-40 ${buttonVariants(
-                    { variant: 'outline' }
-                  )}`}
-                >
-                  <GitHubLogoIcon className='inline w-4 h-4' />
-                  Repository
-                </Link>
-                {
-                  demo && (
+        {projects.map(
+          ({ name, description, demo, repository, stack, active }) => {
+            if (!active) return null;
+            return (
+              <GlowingStarsBackgroundCard
+                className='w-full min-w-72 min-h-[345px] sm:w-1/2 sm:min-w-96 pb-0'
+                key={name}
+              >
+                <h3 className='font-bold text-lg text-pink-500 py-1'>{name}</h3>
+                <h4>{description}</h4>
+                <section className='flex flex-row flex-shrink-0 items-center gap-2 mt-2'>
+                  {stack.map((tech: TechKey) => {
+                    const Logo = Logos[tech];
+                    return (
+                      <LogoContainer className='h-10 w-10 circle-1' key={tech}>
+                        <Logo className='h-7 w-7 ' />
+                      </LogoContainer>
+                    );
+                  })}
+                </section>
+                <p className='flex flex-wrap gap-2 mt-4 w-full'>
+                  <Link
+                    href={repository}
+                    target='_blank'
+                    className={`inline-flex items-center gap-2 bg-background w-40 ${buttonVariants(
+                      { variant: 'outline' }
+                    )}`}
+                  >
+                    <GitHubLogoIcon className='inline w-4 h-4' />
+                    Repository
+                  </Link>
+                  {demo && (
                     <Link
                       href={demo}
                       target='_blank'
@@ -78,12 +79,12 @@ export default async function Page() {
                       <GlobeIcon className='inline w-4 h-4' />
                       Deployment
                     </Link>
-                  )
-                }
-              </p>
-            </GlowingStarsBackgroundCard>
-          );
-        })}
+                  )}
+                </p>
+              </GlowingStarsBackgroundCard>
+            );
+          }
+        )}
       </section>
     </>
   );

@@ -6,4 +6,5 @@ export type Project = {
   demo: string;
   repository: string;
   stack: TechKey[];
+  active: boolean;
 };
