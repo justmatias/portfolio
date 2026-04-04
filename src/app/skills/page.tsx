@@ -17,7 +17,7 @@ export default async function Component() {
       <ParticlesEffect />
       <section className='mb-6'>
         <h2 className='text-2xl md:text-3xl font-bold mb-4'>
-          My <span className='text-pink-500'>Tech Stack</span>
+          My <span className='text-sky-500'>Tech Stack</span>
         </h2>
         <p className='text-lg mb-4'>
           Here, I want to share the skills I have developed in my journey as a
@@ -25,7 +25,7 @@ export default async function Component() {
         </p>
         <p className='text-lg'>
           With a strong commitment to learning and growth, I am
-          <span className='text-pink-500 font-semibold mx-1'>
+          <span className='text-sky-500 font-semibold mx-1'>
             constantly building on my expertise
           </span>
           to stay current in the fast-evolving world of technology.

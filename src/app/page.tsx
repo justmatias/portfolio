@@ -23,13 +23,13 @@ export default function Home() {
         />
         <section className='grow max-w-lg z-30 bg-background'>
           <h2 className='text-3xl lg:text-5xl font-bold drop-shadow-lg py-1 px-2 md:pr-3'>
-            Hi, I&apos;m <span className='text-pink-500'>Matias</span>
+            Hi, I&apos;m <span className='text-sky-500'>Matias</span>
           </h2>
-          <h3 className='text-2xl font-semibold px-2 py-1 md:pr-3 text-pink-500'>
+          <h3 className='text-2xl font-semibold px-2 py-1 md:pr-3 text-sky-500'>
             Programmer Analyst
           </h3>
           <h4 className='text-xl px-2 py-1 md:pr-3'>
-            <span className='text-pink-500 font-semibold'>
+            <span className='text-sky-500 font-semibold'>
               Backend developer
             </span>{' '}
             skilled in Python and Node.js

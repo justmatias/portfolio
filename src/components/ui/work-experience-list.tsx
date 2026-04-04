@@ -21,7 +21,7 @@ export const WorkExperienceList = async () => {
 
   return (
     <section className='mt-10 px-2 max-w-6xl mb-6 bg-background w-full z-30'>
-      <h2 className='flex items-center gap-2 text-2xl font-bold text-pink-500'>
+      <h2 className='flex items-center gap-2 text-2xl font-bold text-sky-500'>
         Work experience
       </h2>
       <ul className='mt-4 flex flex-col gap-5 z-30 bg-background'>
@@ -52,7 +52,7 @@ export const WorkExperienceList = async () => {
                   <CardFooter className='pb-6 flex-wrap gap-1'>
                     {labels.map((text) => (
                       <Badge
-                        className='mr-1 font-medium bg-pink-500 text-white hover:bg-pink-500'
+                        className='mr-1 font-medium bg-sky-500 text-white hover:bg-sky-500'
                         key={text}
                       >
                         {text}

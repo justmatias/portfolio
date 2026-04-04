@@ -25,10 +25,6 @@ const quotes = [
     author: 'Robert C. Martin',
   },
   {
-    quote: 'Code is read much more often than it is written.',
-    author: 'Guido Van Rossum',
-  },
-  {
     quote:
       'Static typing is to reliable programming what a spelling checker is to a good writer.',
     author: 'Peter Van Roy',
@@ -41,14 +37,14 @@ export const Footer = () => {
       <section className='text-lg w-full max-w-5xl bg-background'>
         <p className='py-1 bg-background'>
           I am currently doing a{' '}
-          <span className='font-semibold text-pink-500'>
+          <span className='font-semibold text-sky-500'>
             bachelor&apos;s degree in information systems
-          </span>{' '}
+          </span> {' '}
           in Argentina while working in the IT field.
         </p>
         <p className='py-1 bg-background'>
           My current job is helping me grow both{' '}
-          <span className='font-semibold text-pink-500'>
+          <span className='font-semibold text-sky-500'>
             professionally and personally
           </span>
           . This role has allowed me to build on the skills and knowledge I
@@ -57,12 +53,12 @@ export const Footer = () => {
         </p>
         <p className='py-1 bg-background'>
           I am actively{' '}
-          <span className='font-semibold text-pink-500'>
+          <span className='font-semibold text-sky-500'>
             contributing to real-world projects
           </span>
           , continuously improving my technical abilities, problem-solving
           skills, and{' '}
-          <span className='font-semibold text-pink-500'>
+          <span className='font-semibold text-sky-500'>
             collaborating with diverse teams{' '}
           </span>
           to achieve project goals.
@@ -74,7 +70,7 @@ export const Footer = () => {
             <CarouselItem className='w-full pl-0' key={quote}>
               <Card className='w-full h-28 flex items-center justify-center bg-transparent'>
                 <CardContent className='flex items-center aspect-square justify-center p-4'>
-                  <blockquote className='text-sm font-medium text-pink-500 text-center'>
+                  <blockquote className='text-sm font-medium text-sky-500 text-center'>
                     <p className='py-1 italic font-medium'>{quote}</p>
                     <p className='py-1 font-sm font-light text-foreground'>
                       {author}

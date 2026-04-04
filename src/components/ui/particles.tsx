@@ -53,10 +53,10 @@ export const ParticlesEffect = () => {
       particles: {
         zIndex: { value: 0 },
         color: {
-          value: `${theme === 'dark' ? '#fff' : '#ec4899'}`,
+          value: `${theme === 'dark' ? '#fff' : '#3b82f6'}`,
         },
         links: {
-          color: `${theme === 'dark' ? '#fff' : '#ec4899'}`,
+          color: `${theme === 'dark' ? '#fff' : '#3b82f6'}`,
           distance: 150,
           enable: true,
           opacity: 0.3,

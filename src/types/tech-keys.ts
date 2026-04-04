@@ -19,5 +19,5 @@ export type TechKey =
   | 'chromadb'
   | 'ollama'
   | 'mongodb'
-  | 'azure-functions'
+  | 'azurefunctions'
   | 'datadog';
