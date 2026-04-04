@@ -46,7 +46,7 @@ export default async function Page() {
                 key={name}
               >
                 <h3 className='font-bold text-lg text-sky-500 py-1'>{name}</h3>
-                <h4 className='h-20'>{description}</h4>
+                <h4 className='min-h-20 mb-4'>{description}</h4>
                 <section className='flex flex-row flex-shrink-0 items-center gap-2'>
                   {stack.map((tech: TechKey) => {
                     const Logo = Logos[tech];

@@ -22,7 +22,7 @@ export const GlowingStarsBackgroundCard = ({
         setMouseEnter(false);
       }}
       className={cn(
-        'bg-background p-4 z-10 max-w-md max-h-[20rem] h-full w-full rounded-lg border border-[#eaeaea] dark:border-neutral-600',
+        'bg-background p-4 z-10 max-w-md h-full w-full rounded-lg border border-[#eaeaea] dark:border-neutral-600',
         className
       )}
     >
