@@ -20,4 +20,5 @@ export type TechKey =
   | 'ollama'
   | 'mongodb'
   | 'azurefunctions'
+  | 'redis'
   | 'datadog';
