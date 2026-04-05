@@ -32,9 +32,9 @@ export default async function Component() {
         </p>
       </section>
 
-      <SkillSection title='Frontend' skills={frontend} />
       <SkillSection title='Backend' skills={backend} />
       <SkillSection title='DevOps' skills={devops} />
+      <SkillSection title='Frontend' skills={frontend} />
     </section>
   );
 }
