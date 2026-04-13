@@ -3,10 +3,11 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const schema = new Schema({
-  title: { type: String },
+  authorName: { type: String },
   url: { type: String },
   description: { type: String },
+  lastUpdated: { type: Date },
 });
 
-export const Resource =
-  mongoose.models.Resource || mongoose.model('Resource', schema);
+export const Blogger =
+  mongoose.models.Blogger || mongoose.model('Blogger', schema);
