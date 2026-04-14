@@ -1,12 +1,11 @@
-import mongoose from 'mongoose';
+import mongoose, { InferSchemaType } from 'mongoose';
 
-const Schema = mongoose.Schema;
-
-const schema = new Schema({
-  title: { type: String },
-  url: { type: String },
-  description: { type: String },
+const schema = new mongoose.Schema({
+  title: { type: String, required: true },
+  url: { type: String, required: true },
+  description: { type: String, required: true },
 });
 
+export type Resource = InferSchemaType<typeof schema>;
 export const Resource =
   mongoose.models.Resource || mongoose.model('Resource', schema);
