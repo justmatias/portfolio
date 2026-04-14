@@ -7,7 +7,6 @@ import { ParticlesEffect } from '@/components/features/shared/particles';
 import { avatar } from '@/assets/images';
 import { getExperience } from '@/lib/queries/experience';
 
-
 export default async function Home() {
   const experiences = await getExperience();
 
