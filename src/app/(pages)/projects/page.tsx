@@ -3,8 +3,6 @@ import { ParticlesEffect } from '@/components/features/shared/particles';
 import { ProjectCard } from '@/components/features/projects/project-card';
 import { getProjects } from '@/lib/queries/projects';
 
-export const dynamic = 'force-dynamic';
-
 export default async function Page() {
   const projects = await getProjects();
 

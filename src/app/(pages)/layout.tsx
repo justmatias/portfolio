@@ -1,3 +1,5 @@
+export const revalidate = 86400;
+
 import { Header } from '@/components/features/header/header';
 import { Footer } from '@/components/features/footer/footer';
 import { PageTransition } from '@/components/features/shared/page-transition';
