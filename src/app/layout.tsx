@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { Open_Sans } from 'next/font/google';
+import { ThemeProvider } from '@/components/providers';
+
 export const metadata: Metadata = {
   title: 'Matias Gimenez | Portfolio',
   description: 'My name is Matias and this is my personal site',
@@ -7,9 +10,6 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
   },
 };
-import { Open_Sans } from 'next/font/google';
-import { ThemeProvider } from '@/components/providers';
-import { Header, Footer, PageTransition } from '@/components/ui';
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -29,11 +29,7 @@ export default function RootLayout({
           defaultTheme='light'
           disableTransitionOnChange
         >
-          <Header />
-          <PageTransition>
-            <main className='px-2'>{children}</main>
-          </PageTransition>
-          <Footer />
+          {children}
         </ThemeProvider>
       </body>
     </html>

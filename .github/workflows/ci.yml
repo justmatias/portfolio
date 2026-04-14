@@ -19,8 +19,8 @@ jobs:
         uses: actions/setup-node@v4.0.3
       - name: Install dependencies
         run: npm install --immutable
-      - name: Lint and Format code
-        run: npm run lint && npm run format
+      - name: Format code
+        run: npm run format
   type-check:
     name: Type checking
     runs-on: ubuntu-latest

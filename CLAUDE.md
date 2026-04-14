@@ -20,44 +20,55 @@ Copy `.env.sample` to `.env.local` and populate:
 
 - `DATABASE_URI` — MongoDB connection string
 - `DATABASE_NAME` — database name
-- `BASE_URL` — e.g. `http://localhost:3000` (used by pages to call internal API routes via axios)
 
 ## Architecture
 
-Next.js 15 App Router site backed by MongoDB. All content (projects, skills, experience, resources) lives in MongoDB and is served through internal API routes at `/api/*`. Pages fetch their own data server-side by calling those API routes with axios using `BASE_URL`.
+Next.js 15 App Router site backed by MongoDB. All content (projects, skills, experience, resources) lives in MongoDB and is queried directly from server components via typed query functions in `src/lib/queries/`.
 
 ```
 src/
   app/
-    (pages)/          # Route segments: /, /skills, /projects, /resources
-    api/              # Internal API routes: /api/skills, /api/project, /api/experience, /api/resource
-    layout.tsx        # Root layout with ThemeProvider and Header
+    (pages)/      # Route group: /, /skills, /projects, /resources
+      layout.tsx      # Header, Footer, PageTransition
+      page.tsx        # Home
+      projects/       # page.tsx, loading.tsx, error.tsx
+      skills/         # page.tsx, loading.tsx, error.tsx
+      resources/      # page.tsx, loading.tsx, error.tsx
+    layout.tsx        # Root: html/body/ThemeProvider only
+    template.tsx      # Framer Motion page entrance animation
+    not-found.tsx
   components/
-    ui/               # shadcn/ui primitives (button, card, badge, carousel…)
+    ui/               # shadcn/ui primitives only (button, card, badge, carousel)
+    features/
+      header/         # Header, MenuButton, ThemeToggle
+      footer/         # Footer
+      projects/       # ProjectCard
+      skills/         # SkillSection, SkillCard
+      home/           # WorkExperienceList
+      shared/         # AnimatedCard, LinkPreview, PageTransition, ParticlesEffect, Logos
     providers/        # ThemeProvider wrapper
-    header.tsx        # Client component — sticky nav with mobile menu
-    particles.tsx     # Client component — tsParticles background
-  database/
-    database.ts       # MongoDB singleton (lazy init, cached connection)
-  models/             # Mongoose schemas: Project, Skill, Experience, Resource
-  types/              # TypeScript interfaces and the TechKey union type
-  lib/utils.ts        # cn() helper (tailwind-merge + clsx)
+  lib/
+    db.ts             # MongoDB singleton (lazy init, cached connection)
+    queries/          # getProjects, getSkillsByCategory, getExperience, getResources, getBloggers, getPeople
+    utils.ts          # cn() helper (tailwind-merge + clsx)
+  models/             # Mongoose schemas with InferSchemaType — source of truth for types
 ```
 
 ### Data flow
 
-1. Page component (server) calls `axios.get(BASE_URL + '/api/...')`
-2. API route connects to MongoDB via the singleton, queries via Mongoose, returns JSON
-3. Page passes data to client/server child components for rendering
+1. Page component (server) calls a query function from `src/lib/queries/`
+2. Query function connects to MongoDB via the singleton, queries via Mongoose, returns plain objects (`.lean()`)
+3. Page passes data to child components for rendering
 
 Pages use `export const dynamic = 'force-dynamic'` and `fetchCache = 'force-no-store'` so content is always fresh.
 
 ### Key conventions
 
-- **TechKey** (`src/types/tech-keys.ts`) is a strict union type for all supported tech stack icons. Extend it when adding new technologies to projects or skills.
-- **shadcn/ui** components live in `src/components/ui/` — prefer extending those over creating new primitives.
+- **TechKey** is derived from the `Logos` map in `src/components/features/shared/logos.tsx` via `export type TechKey = keyof typeof Logos`. To add a new tech icon, add the SVG component and an entry to `Logos` — `TechKey` updates automatically.
+- **Types derive from models**: Mongoose schemas in `src/models/` export both the Mongoose model (value) and a plain type with the entity name (e.g. `export type Skill`, `export const Skill`) via `InferSchemaType`. Import the type with `import type { Skill } from '@/models/skill'`. There is no `src/types/` folder.
+- **shadcn/ui** components live in `src/components/ui/` — primitives only. Feature components go in `src/components/features/<domain>/`.
 - Dark mode via `next-themes` using the `class` strategy; theme-aware styles use CSS variables defined in `globals.css`.
-- Framer Motion page entrance: `y: 20 → 0, opacity: 0 → 1, 500ms` — keep new animated sections consistent with this.
+- Framer Motion page entrance: `y: 20 -> 0, opacity: 0 -> 1, 500ms` — keep new animated sections consistent with this.
 - External image domain `api.microlink.io` is whitelisted in `next.config.mjs` for resource link previews.
 
 ## Output
