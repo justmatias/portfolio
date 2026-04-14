@@ -6,7 +6,6 @@ import { getResources } from '@/lib/queries/resources';
 import { getBloggers } from '@/lib/queries/bloggers';
 import { getPeople } from '@/lib/queries/people';
 
-export const dynamic = 'force-dynamic';
 
 export default async function Page() {
   const [content, bloggers, people] = await Promise.all([

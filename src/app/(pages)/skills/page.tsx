@@ -3,7 +3,6 @@ import { ParticlesEffect } from '@/components/features/shared/particles';
 import { SkillSection } from '@/components/features/skills/skills-section';
 import { getSkillsByCategory } from '@/lib/queries/skills';
 
-export const dynamic = 'force-dynamic';
 
 export default async function Page() {
   const { frontend, backend, devops } = await getSkillsByCategory();
