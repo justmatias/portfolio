@@ -4,7 +4,6 @@ import { SkillSection } from '@/components/features/skills/skills-section';
 import { getSkillsByCategory } from '@/lib/queries/skills';
 
 export const dynamic = 'force-dynamic';
-export const fetchCache = 'force-no-store';
 
 export default async function Page() {
   const { frontend, backend, devops } = await getSkillsByCategory();

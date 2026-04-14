@@ -8,7 +8,6 @@ import { avatar } from '@/assets/images';
 import { getExperience } from '@/lib/queries/experience';
 
 export const dynamic = 'force-dynamic';
-export const fetchCache = 'force-no-store';
 
 export default async function Home() {
   const experiences = await getExperience();
