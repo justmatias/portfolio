@@ -31,22 +31,22 @@ export default async function Home() {
           </h3>
           <h4 className='text-xl px-2 py-1 md:pr-3'>
             <span className='text-sky-500 font-semibold'>
-              Backend developer
+              Backend Developer
             </span>{' '}
             skilled in Python and Node.js
           </h4>
           <p className='text-lg md:text-xl pt-6 pb-2 px-2 md:pr-3'>
-            This is my personal site made using Next.js, Typescript, and
-            TailwindCSS.
+            Welcome to my personal corner of the web — built with Next.js,
+            TypeScript, and TailwindCSS.
           </p>
           <p className='text-md md:text-xl px-2 pb-4 md:pr-3'>
-            You can check out the source code on my
+            Feel free to explore the source code on my
             <Link
               href='https://github.com/justmatias'
               target='_blank'
               className='font-semibold ml-1 hover:underline bg-background'
             >
-              Github
+              GitHub
             </Link>
           </p>
           <p className='flex gap-2 px-2 md:pr-3'>
@@ -67,7 +67,7 @@ export default async function Home() {
                 { variant: 'outline' }
               )}`}
             >
-              <GitHubLogoIcon className='inline' /> Github
+              <GitHubLogoIcon className='inline' /> GitHub
             </Link>
           </p>
         </section>

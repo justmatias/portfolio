@@ -35,32 +35,31 @@ export const Footer = () => {
     <footer className='w-full mt-8 px-2 bg-background'>
       <section className='text-lg w-full max-w-5xl bg-background'>
         <p className='py-1 bg-background'>
-          I am currently doing a{' '}
+          I&apos;m currently pursuing a{' '}
           <span className='font-semibold text-sky-500'>
-            bachelor&apos;s degree in information systems
+            Bachelor&apos;s degree in Artificial Intelligence
           </span>{' '}
-          in Argentina while working in the IT field.
+          in Argentina, while building my career in software development.
         </p>
         <p className='py-1 bg-background'>
-          My current job is helping me grow both{' '}
+          My current role has been a catalyst for both{' '}
           <span className='font-semibold text-sky-500'>
-            professionally and personally
+            professional and personal growth
           </span>
-          . This role has allowed me to build on the skills and knowledge I
-          gained from my previous experience, deepening my understanding of
-          various technologies and practices.
+          {' '}&mdash; allowing me to deepen my understanding of modern
+          technologies and engineering practices, building on a solid
+          foundation from previous experience.
         </p>
         <p className='py-1 bg-background'>
-          I am actively{' '}
+          I thrive on{' '}
           <span className='font-semibold text-sky-500'>
             contributing to real-world projects
           </span>
-          , continuously improving my technical abilities, problem-solving
-          skills, and{' '}
+          , sharpening my problem-solving and technical skills while{' '}
           <span className='font-semibold text-sky-500'>
-            collaborating with diverse teams{' '}
+            collaborating with cross-functional teams{' '}
           </span>
-          to achieve project goals.
+          to deliver meaningful results.
         </p>
       </section>
       <Carousel className='m-auto my-12 w-9/12 md:w-full max-w-xl bg-background'>

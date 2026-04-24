@@ -5,7 +5,7 @@ import { ThemeProvider } from '@/components/providers';
 
 export const metadata: Metadata = {
   title: 'Matias Gimenez | Portfolio',
-  description: 'My name is Matias and this is my personal site',
+  description: 'Matias Gimenez — Backend Developer & Programmer Analyst',
   icons: {
     icon: '/favicon.ico',
   },
