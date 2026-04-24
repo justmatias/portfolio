@@ -1,4 +1,4 @@
-# My personal site | Matias Gimenez
+# My personal site
 
 Built with:
 
